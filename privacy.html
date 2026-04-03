@@ -9,6 +9,7 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif; line-height: 1.7; color: #1d1d1f; background: #fff; padding: 24px; max-width: 720px; margin: 0 auto; }
     h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
     h2 { font-size: 20px; font-weight: 600; margin-top: 32px; margin-bottom: 12px; }
+    h3 { font-size: 17px; font-weight: 600; margin-top: 16px; margin-bottom: 8px; }
     p, li { font-size: 15px; color: #333; margin-bottom: 12px; }
     ul { padding-left: 20px; }
     .updated { font-size: 13px; color: #86868b; margin-bottom: 32px; }
@@ -25,16 +26,16 @@
 
 <h2>1. Information We Collect</h2>
 
-<h2 style="font-size:17px; margin-top:16px;">a) Account Information</h2>
+<h3>a) Account Information</h3>
 <p>When you sign in with Apple or Google, we receive:</p>
 <ul>
-  <li><strong>Name</strong> — your first and last name (as provided by your sign-in provider)</li>
-  <li><strong>Email address</strong> — may be a private relay address if you use Apple's "Hide My Email"</li>
-  <li><strong>User identifier</strong> — a unique ID from your sign-in provider</li>
+  <li><strong>Name</strong> - your first and last name (as provided by your sign-in provider)</li>
+  <li><strong>Email address</strong> - may be a private relay address if you use Apple's "Hide My Email"</li>
+  <li><strong>User identifier</strong> - a unique ID from your sign-in provider</li>
 </ul>
 <p>If you use Guest Mode, no account information is collected or transmitted.</p>
 
-<h2 style="font-size:17px; margin-top:16px;">b) Fitness & Health Data</h2>
+<h3>b) Fitness &amp; Health Data</h3>
 <p>With your explicit permission, we access the following data from Apple HealthKit:</p>
 <ul>
   <li>Step count</li>
@@ -46,26 +47,46 @@
 </ul>
 <p>We also write completed workout data back to Apple Health so it appears in your Health app.</p>
 
-<h2 style="font-size:17px; margin-top:16px;">c) Workout Data</h2>
+<h3>c) Workout Data</h3>
 <p>Information you enter in the app, including:</p>
 <ul>
   <li>Workout logs (exercises, sets, reps, weights)</li>
   <li>Personal records</li>
   <li>Training programs and templates</li>
-  <li>Body measurements and progress photos</li>
   <li>Goals and preferences</li>
 </ul>
 
-<h2>2. How We Use Your Information</h2>
+<h3>d) Body Measurements &amp; Progress Photos</h3>
+<p>If you choose to use these features, we collect:</p>
+<ul>
+  <li><strong>Body measurements</strong> - weight, body fat percentage, and other measurements you enter</li>
+  <li><strong>Progress photos</strong> - images you capture or select from your photo library</li>
+</ul>
+<p>Progress photos are stored <strong>locally on your device only</strong> and are never uploaded to our servers or shared with third parties. Body measurement data is stored locally using SwiftData. You may delete any measurement or photo at any time from within the app.</p>
+
+<h3>e) AI-Related Data</h3>
+<p>When you use our AI workout generation feature, we send your fitness profile (goals, experience level, available equipment, and target muscles) to our AI service provider to generate workout recommendations. We do not send your name, email, health data, or any personally identifiable information to the AI service.</p>
+
+<h2>2. Legal Basis for Processing (GDPR)</h2>
+<p>If you are located in the European Economic Area (EEA), United Kingdom, or Switzerland, we process your personal data based on the following legal grounds:</p>
+<ul>
+  <li><strong>Consent</strong> - for HealthKit data access, push notifications, and progress photos</li>
+  <li><strong>Contract performance</strong> - for account creation, authentication, and providing the core fitness tracking service</li>
+  <li><strong>Legitimate interest</strong> - for improving app functionality, preventing fraud, and ensuring security</li>
+</ul>
+<p>You may withdraw consent at any time without affecting the lawfulness of prior processing.</p>
+
+<h2>3. How We Use Your Information</h2>
 <p>We use your information solely to:</p>
 <ul>
   <li>Provide and improve the fitness tracking experience</li>
   <li>Display your workout history, statistics, and achievements</li>
   <li>Sync your data across sessions via authenticated sign-in</li>
-  <li>Generate personalized workout suggestions</li>
+  <li>Generate personalized AI workout suggestions based on your fitness profile</li>
+  <li>Send push notifications (workout reminders, streak warnings, weekly summaries) if you opt in</li>
 </ul>
 
-<h2>3. Apple HealthKit Data</h2>
+<h2>4. Apple HealthKit Data</h2>
 <p>We treat HealthKit data with the highest level of care, in compliance with Apple's guidelines:</p>
 <ul>
   <li>HealthKit data is <strong>never</strong> used for advertising or marketing</li>
@@ -75,51 +96,96 @@
   <li>The app remains fully functional if you decline HealthKit access</li>
 </ul>
 
-<h2>4. Data Storage & Security</h2>
+<h2>5. Data Storage &amp; Security</h2>
 <ul>
-  <li><strong>Local storage:</strong> Your workout data is stored locally on your device using Apple's SwiftData framework</li>
-  <li><strong>Authentication:</strong> Account sessions are managed securely through Supabase, which uses industry-standard encryption</li>
+  <li><strong>Local storage:</strong> Your workout data, body measurements, and progress photos are stored locally on your device using Apple's SwiftData framework</li>
+  <li><strong>Authentication:</strong> Account sessions are managed securely through Supabase, which uses industry-standard encryption (TLS 1.2+, AES-256 at rest)</li>
   <li><strong>Keychain:</strong> Sensitive tokens (such as Apple authorization codes) are stored in the iOS Keychain, Apple's secure credential storage</li>
   <li>We do not store your Apple ID password or Google password</li>
 </ul>
 
-<h2>5. Data Sharing</h2>
-<p>We do <strong>not</strong> sell, rent, or share your personal information with third parties. Your data is only processed by:</p>
+<h2>6. Data Sharing</h2>
+<p>We do <strong>not</strong> sell, rent, or share your personal information with third parties. Your data is only processed by the following service providers, strictly for the purposes described:</p>
 <ul>
-  <li><strong>Supabase</strong> — our backend authentication and data hosting provider</li>
-  <li><strong>Apple HealthKit</strong> — for reading and writing health data (with your permission)</li>
+  <li><strong>Supabase</strong> (San Francisco, USA) - backend authentication and data hosting</li>
+  <li><strong>Apple HealthKit</strong> - reading and writing health data on your device (with your permission)</li>
+  <li><strong>Anthropic</strong> (San Francisco, USA) - AI workout generation (receives only anonymized fitness profile data, no personal identifiers)</li>
 </ul>
 
-<h2>6. Analytics & Tracking</h2>
-<p>Mundo Fitness does <strong>not</strong> use any third-party analytics, tracking, or advertising SDKs. We do not track your behavior across other apps or websites.</p>
+<h2>7. International Data Transfers</h2>
+<p>Our backend services are hosted in the United States via Supabase. If you are located outside the United States, your account and authentication data may be transferred to and processed in the United States. By using the App, you consent to this transfer. We ensure that appropriate safeguards are in place to protect your data in accordance with this Privacy Policy and applicable data protection laws.</p>
 
-<h2>7. Your Rights</h2>
+<h2>8. Data Retention</h2>
+<ul>
+  <li><strong>Active accounts:</strong> We retain your account data for as long as your account is active</li>
+  <li><strong>Local data:</strong> Workout logs, measurements, and photos remain on your device until you delete them or delete your account</li>
+  <li><strong>After account deletion:</strong> All server-side data is permanently deleted immediately upon account deletion. No grace period or recovery is available</li>
+  <li><strong>Authentication logs:</strong> Supabase may retain anonymized authentication logs for up to 90 days for security and abuse prevention purposes</li>
+</ul>
+
+<h2>9. Analytics &amp; Tracking</h2>
+<p>Mundo Fitness does <strong>not</strong> use any third-party analytics, tracking, or advertising SDKs. We do not track your behavior across other apps or websites. We do not use cookies or similar tracking technologies.</p>
+
+<h2>10. Push Notifications</h2>
+<p>With your opt-in consent, we may send push notifications for:</p>
+<ul>
+  <li>Workout reminders on your training days</li>
+  <li>Streak warnings when you're about to lose a streak</li>
+  <li>Weekly progress summaries</li>
+</ul>
+<p>All notifications are transactional (related to your fitness activity). We do not send marketing or promotional notifications. You can disable notifications at any time via iOS Settings or within the App.</p>
+
+<h2>11. Your Rights</h2>
 <p>You have the right to:</p>
 <ul>
-  <li><strong>Access</strong> your data — all your data is visible within the app</li>
-  <li><strong>Export</strong> your data — use the Export Data feature in Profile settings</li>
-  <li><strong>Delete</strong> your account and all associated data — use "Delete Account" in Profile &gt; Account</li>
+  <li><strong>Access</strong> your data - all your data is visible within the app</li>
+  <li><strong>Export</strong> your data - use the Export Data feature in Profile settings (CSV format)</li>
+  <li><strong>Delete</strong> your account and all associated data - use "Delete Account" in Profile &gt; Account</li>
+  <li><strong>Correct</strong> your data - edit your profile, measurements, and workout logs at any time</li>
+  <li><strong>Restrict processing</strong> - revoke specific permissions (HealthKit, notifications) while keeping your account</li>
+  <li><strong>Data portability</strong> - export your workout history and personal records in CSV format</li>
   <li><strong>Revoke</strong> HealthKit access at any time via iOS Settings &gt; Health &gt; Data Access</li>
-  <li><strong>Revoke</strong> Sign in with Apple access via iOS Settings &gt; Apple ID &gt; Sign-In & Security</li>
+  <li><strong>Revoke</strong> Sign in with Apple access via iOS Settings &gt; Apple ID &gt; Sign-In &amp; Security</li>
 </ul>
 
-<h2>8. Account Deletion</h2>
+<h2>12. California Privacy Rights (CCPA/CPRA)</h2>
+<p>If you are a California resident, you have the following additional rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA):</p>
+<ul>
+  <li><strong>Right to know</strong> - what personal information we collect, use, and disclose</li>
+  <li><strong>Right to delete</strong> - request deletion of your personal information</li>
+  <li><strong>Right to correct</strong> - request correction of inaccurate personal information</li>
+  <li><strong>Right to opt-out of sale</strong> - we do <strong>not</strong> sell your personal information, so no opt-out is necessary</li>
+  <li><strong>Right to non-discrimination</strong> - we will not discriminate against you for exercising your rights</li>
+</ul>
+<p>To exercise these rights, contact us at <strong>mundo@mundosama.com</strong>. We will respond within 45 days.</p>
+
+<h2>13. EEA, UK &amp; Swiss Privacy Rights (GDPR)</h2>
+<p>If you are located in the European Economic Area, United Kingdom, or Switzerland, you have the following additional rights:</p>
+<ul>
+  <li><strong>Right to lodge a complaint</strong> with your local data protection supervisory authority</li>
+  <li><strong>Right to object</strong> to processing based on legitimate interest</li>
+  <li><strong>Right to withdraw consent</strong> at any time for consent-based processing</li>
+  <li><strong>Right to data portability</strong> in a machine-readable format</li>
+</ul>
+<p>To exercise these rights, contact us at <strong>mundo@mundosama.com</strong>.</p>
+
+<h2>14. Account Deletion</h2>
 <p>When you delete your account:</p>
 <ul>
-  <li>All local data (workouts, achievements, profile) is permanently erased from your device</li>
+  <li>All local data (workouts, achievements, profile, measurements, photos) is permanently erased from your device</li>
   <li>Your authentication account is deleted from our servers</li>
   <li>If you signed in with Apple, your Apple tokens are revoked per Apple's guidelines (TN3194)</li>
   <li>This action is irreversible</li>
 </ul>
 
-<h2>9. Children's Privacy</h2>
-<p>Mundo Fitness is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13.</p>
+<h2>15. Children's Privacy</h2>
+<p>Mundo Fitness is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected data from a child under 13, we will delete it promptly.</p>
 
-<h2>10. Changes to This Policy</h2>
-<p>We may update this Privacy Policy from time to time. Changes will be reflected by the "Last updated" date above. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
+<h2>16. Changes to This Policy</h2>
+<p>We may update this Privacy Policy from time to time. Changes will be reflected by the "Last updated" date above. For material changes, we will notify you via in-app notification or email. Continued use of the app after changes constitutes acceptance of the revised policy.</p>
 
-<h2>11. Contact Us</h2>
-<p>If you have questions about this Privacy Policy or your data, contact us at:</p>
+<h2>17. Contact Us</h2>
+<p>If you have questions about this Privacy Policy, your data, or wish to exercise your rights, contact us at:</p>
 <p><strong>Email:</strong> mundo@mundosama.com</p>
 
 <hr>
